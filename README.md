@@ -12,7 +12,21 @@ How I use this hack :
      
   6. This install the cli in C:\Users\myUser\AppData\Roaming\npm\
   7. Go into node_modules\@redocly and create a copy the cli folder. Call it "redocly-cli-behind-proxy"
-  8. Back in the  C:\Users\myUser\AppData\Roaming\npm\ modify the redocly.cmd and redocly.ps1 (if you are using bash or using linux, you also need to modify the redocly file)
+
+     Copy the modified push files from the cloned folder (I don't know which files are needed so I copy all of them) :
+     
+            E:\Tmp\git-clone\redocly-cli-behind-proxy\packages\cli\lib\commands\push.d.ts     --to-->     C:\Users\Myuser\AppData\Roaming\npm\node_modules\@redocly\redocly-cli-behind-proxy\lib\commands 
+            E:\Tmp\git-clone\redocly-cli-behind-proxy\packages\cli\lib\commands\push.js       --to-->     C:\Users\Myuser\AppData\Roaming\npm\node_modules\@redocly\redocly-cli-behind-proxy\lib\commands
+
+             
+           E:\Tmp\git-clone\redocly-cli-behind-proxy\packages\core\lib\redocly\registry-api.d.ts              --to-->  C:\Users\Myuser\AppData\Roaming\npm\node_modules\@redocly\redocly-cli-behind-proxy\node_modules\@redocly\openapi-core\lib\redocly
+           E:\Tmp\git-clone\redocly-cli-behind-proxy\packages\core\lib\redocly\registry-api.js                --to-->  C:\Users\Myuser\AppData\Roaming\npm\node_modules\@redocly\redocly-cli-behind-proxy\node_modules\@redocly\openapi-core\lib\redocly
+           E:\Tmp\git-clone\redocly-cli-behind-proxy\packages\core\lib\redocly\registry-api-types.d.ts        --to-->  C:\Users\Myuser\AppData\Roaming\npm\node_modules\@redocly\redocly-cli-behind-proxy\node_modules\@redocly\openapi-core\lib\redocly
+           E:\Tmp\git-clone\redocly-cli-behind-proxy\packages\core\lib\redocly\registry-api-types.js          --to-->  C:\Users\Myuser\AppData\Roaming\npm\node_modules\@redocly\redocly-cli-behind-proxy\node_modules\@redocly\openapi-core\lib\redocly
+           
+         
+
+  9. Back in the  C:\Users\myUser\AppData\Roaming\npm\ modify the redocly.cmd and redocly.ps1 (if you are using bash or using linux, you also need to modify the redocly file)
 
      Change the execution paths to run the CLI from (..)/redocly-cli-behind-proxy/bin/cli.js
 
