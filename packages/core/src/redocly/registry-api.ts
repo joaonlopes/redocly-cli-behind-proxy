@@ -27,6 +27,7 @@ export class RegistryApi {
     return this;
   }
 
+  HttpsProxyAgent = require('https-proxy-agent');
   private async request(path = '', options: RequestInit = {}, region?: Region) {
     const currentCommand =
       typeof process !== 'undefined' ? process.env?.REDOCLY_CLI_COMMAND || '' : '';
@@ -40,10 +41,11 @@ export class RegistryApi {
     if (!headers.hasOwnProperty('authorization')) {
       throw new Error('Unauthorized');
     }
-
+	
+	const proxyAgent = new this.HttpsProxyAgent(process.env?.REDOCLY_PROXY);
     const response = await fetch(
       `${this.getBaseUrl(region)}${path}`,
-      Object.assign({}, options, { headers })
+      Object.assign({}, options, { headers }, { agent: proxyAgent})
     );
 
     if (response.status === 401) {
