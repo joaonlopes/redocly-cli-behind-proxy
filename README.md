@@ -13,7 +13,7 @@ How I use this hack :
   6. This install the cli in C:\Users\myUser\AppData\Roaming\npm\
   7. Go into node_modules\@redocly and create a copy the cli folder. Call it "redocly-cli-behind-proxy"
 
-     Copy the modified push files from the cloned folder (I don't know which files are needed so I copy all of them) :
+     Copy the modified files from the cloned folder (I don't know which files are needed so I copy all of them) :
      
             E:\Tmp\git-clone\redocly-cli-behind-proxy\packages\cli\lib\commands\push.d.ts     --to-->     C:\Users\Myuser\AppData\Roaming\npm\node_modules\@redocly\redocly-cli-behind-proxy\lib\commands 
             E:\Tmp\git-clone\redocly-cli-behind-proxy\packages\cli\lib\commands\push.js       --to-->     C:\Users\Myuser\AppData\Roaming\npm\node_modules\@redocly\redocly-cli-behind-proxy\lib\commands
