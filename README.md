@@ -19,3 +19,10 @@ How I use this hack :
 If something is not clear, create an issue, I'll try to answer     
 
 I only tested this on Windows and for my specific case, it's very possible that it won't work for everybody.
+
+There is an issue with the organization parameter though, for some reason it requires having a redocly.yaml file. Otherwise the push won't recognize the organization.
+
+Run it using:
+
+
+ redocly push openapi.yaml --destination="API_REGISTRY@VERSION"
