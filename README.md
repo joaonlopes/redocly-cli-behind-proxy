@@ -1,4 +1,6 @@
-The purpose of this branch is to keep an hack that allows using the redocly cli behind a proxy. The change is only on 2 files push.ts and registry-api.ts. It requires package https-proxy-agent.
+The purpose of this fork is to keep an hack that allows using the redocly cli behind a proxy. The change is only on 2 files push.ts and registry-api.ts. It requires package https-proxy-agent.
+
+I made the fork from Main. 
 
 How I use this hack :
 
@@ -15,3 +17,5 @@ How I use this hack :
      Change the execution paths to run the CLI from (..)/redocly-cli-behind-proxy/bin/cli.js
 
 If something is not clear, create an issue, I'll try to answer     
+
+I only tested this on Windows and for my specific case, it's very possible that it won't work for everybody.
