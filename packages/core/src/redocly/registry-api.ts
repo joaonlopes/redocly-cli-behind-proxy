@@ -42,6 +42,8 @@ export class RegistryApi {
       throw new Error('Unauthorized');
     }
 	
+	process.stdout.write('LOG: RegistryApi request \n');
+	
 	const proxyAgent = new this.HttpsProxyAgent(process.env?.REDOCLY_PROXY);
     const response = await fetch(
       `${this.getBaseUrl(region)}${path}`,

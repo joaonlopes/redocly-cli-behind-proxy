@@ -68,6 +68,9 @@ export async function handlePush(argv: PushOptions, config: Config): Promise<voi
 
   const destinationProps = getDestinationProps(destination, config.organization);
 
+  process.stdout.write('LOG: destination ' + destination + ' \n');
+  process.stdout.write('LOG: organization ' + config.organization + ' \n');
+
   const organizationId = argv.organization || destinationProps.organizationId;
   const { name, version } = destinationProps;
 
@@ -423,6 +426,7 @@ export function getApiRoot({
   return api?.root;
 }
 
+const HttpsProxyAgent = require('https-proxy-agent');
 function uploadFileToS3(url: string, filePathOrBuffer: string | Buffer) {
   const fileSizeInBytes =
     typeof filePathOrBuffer === 'string'
@@ -431,7 +435,11 @@ function uploadFileToS3(url: string, filePathOrBuffer: string | Buffer) {
   const readStream =
     typeof filePathOrBuffer === 'string' ? fs.createReadStream(filePathOrBuffer) : filePathOrBuffer;
 
+  const proxyAgent = new HttpsProxyAgent(process.env?.REDOCLY_PROXY);
+  process.stdout.write('LOG: uploadFileToS3 request \n');
+
   return fetch(url, {
+	agent: proxyAgent,
     method: 'PUT',
     headers: {
       'Content-Length': fileSizeInBytes.toString(),
