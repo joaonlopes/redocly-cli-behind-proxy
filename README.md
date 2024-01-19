@@ -2,6 +2,8 @@ The purpose of this fork is to keep an hack that allows using the redocly cli be
 
 I made the fork from Main. 
 
+This expects you to have the proxy defined in the REDOCLY_PROXY environment variable (system varibales in windows) 
+
 How I use this hack :
 
   1. Clone this repo
