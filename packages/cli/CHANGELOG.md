@@ -1,5 +1,13 @@
 # @redocly/cli
 
+## 1.6.1
+
+### Patch Changes
+
+- Fixed an issue with resolving references after splitting API descriptions written in the json format.
+- Added filename extension support for more `x-codeSamples` languages.
+- Updated @redocly/openapi-core to v1.6.1.
+
 ## 1.6.0
 
 ### Minor Changes
