@@ -1,5 +1,11 @@
 # @redocly/openapi-core
 
+## 1.6.1
+
+### Patch Changes
+
+- Fix schema type of AsyncAPI operation tags
+
 ## 1.6.0
 
 ### Minor Changes
